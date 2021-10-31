@@ -18,8 +18,8 @@
         },
         {
             "id": 3,
-            "name": "Samsung Galaxy Fold 3",
-            "desc": "Samsung Galaxy Fold 3rd generation",
+            "name": "Samsung Galaxy Z Fold 3",
+            "desc": "Samsung Galaxy Z Fold 3rd generation",
             "price": 1299,
             "color": "#e0bfae",
             "image": "https://images.samsung.com/levant/smartphones/galaxy-z-fold3-5g/buy/zfold3_carousel_mainsinglekv_mo.jpg"
@@ -39,6 +39,30 @@
             "price": 749,
             "color": "#e3e4e9",
             "image": "https://www.notebookcheck.net/uploads/tx_nbc2/XiaomiMi11Ultra.jpg"
+        },
+        {
+            "id": 6,
+            "name": "iPad Pro",
+            "desc": "Apple iPad Pro 11\"",
+            "price": 799,
+            "color": "#00acc1",
+            "image": "https://m.media-amazon.com/images/I/815a+XjrgvL._SL1500_.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Samsung Galaxy Z Flip 3",
+            "desc": "Samsung Galaxy Z Flip 3rd generation",
+            "price": 999,
+            "color": "#ffa000",
+            "image": "https://specifications-pro.com/wp-content/uploads/2021/08/Samsung-Galaxy-Z-Flip-3-1.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Vivo X70 Pro+",
+            "desc": "Vivo X70 Pro 5G",
+            "price": 799,
+            "color": "#ec407a",
+            "image": "https://www.notebookcheck.net/uploads/tx_nbc2/VivoX70Pro_.jpg"
         }
     ]
 }
