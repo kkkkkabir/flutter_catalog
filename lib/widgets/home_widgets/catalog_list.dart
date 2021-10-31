@@ -8,20 +8,25 @@ import 'package:velocity_x/velocity_x.dart';
 class CatalogList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          final catalog = CatalogModel.items[index];
-          return InkWell(
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => HomeDetailsPage(catalog: catalog))),
-              child: CatalogItem(catalog: catalog));
-        },
-        itemCount: CatalogModel.items.length,
-      ),
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              final catalog = CatalogModel.items[index];
+              return InkWell(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              HomeDetailsPage(catalog: catalog))),
+                  child: CatalogItem(catalog: catalog));
+            },
+            itemCount: CatalogModel.items.length,
+          ),
+        ),
+      ],
     );
   }
 }
