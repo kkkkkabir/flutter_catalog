@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -16,7 +15,7 @@ class CatalogHeader extends StatelessWidget {
             .xl5
             .bold
             .fontFamily(GoogleFonts.quicksand().fontFamily.toString())
-            .color(MyTheme.darkBluishColor)
+            .color(context.theme.accentColor)
             .make(),
         "Trending products".text.xl2.make()
       ],

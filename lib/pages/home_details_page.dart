@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
-import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeDetailsPage extends StatelessWidget {
@@ -13,9 +12,9 @@ class HomeDetailsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.canvasColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -24,21 +23,20 @@ class HomeDetailsPage extends StatelessWidget {
                 .text
                 .bold
                 .xl4
-                .color(Vx.hexToColor("#F44336"))
+                .color(context.theme.highlightColor)
                 .make(),
             ElevatedButton(
               onPressed: () {},
               child: "Buy".text.xl.make(),
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(MyTheme.darkBluishColor),
+                      MaterialStateProperty.all(context.theme.buttonColor),
                   shape: MaterialStateProperty.all(StadiumBorder())),
             ).wh(100, 50)
           ],
         ).p16(),
       ),
       body: SafeArea(
-        bottom: false,
         child: Column(
           children: [
             Hero(
@@ -52,7 +50,8 @@ class HomeDetailsPage extends StatelessWidget {
                   edge: VxEdge.TOP,
                   child: Container(
                     width: context.screenWidth,
-                    color: Colors.white,
+                    height: context.screenHeight,
+                    color: context.cardColor,
                     child: Hero(
                       tag: Key(catalog.desc.toString()),
                       child: Column(
@@ -64,10 +63,10 @@ class HomeDetailsPage extends StatelessWidget {
                             child:
                                 "Diam takimata ipsum tempor amet vero clita ipsum et, elitr no ipsum sed amet et elitr duo nonumy, aliquyam diam magna ea labore labore diam est gubergren et. Invidunt rebum dolor et no dolor et erat amet. Et dolor no dolores rebum sed nonumy dolores. Sed diam diam kasd diam"
                                     .text
+                                    .align(TextAlign.center)
                                     .xl
                                     .gray400
-                                    .make()
-                                    .p16(),
+                                    .make(),
                           ),
                         ],
                       ).py64(),
