@@ -1,6 +1,11 @@
 import 'dart:convert';
 
 class CatalogModel {
+  //Singleton class
+  static final catModel = CatalogModel._internal();
+  CatalogModel._internal();
+  factory CatalogModel() => catModel;
+
   static List<Item> items = [];
 
   //Get Item by ID
@@ -14,7 +19,7 @@ class CatalogModel {
 class Item {
   final int id;
   final String name;
-  final String desc;  
+  final String desc;
   final num price;
   final String color;
   final String image;
