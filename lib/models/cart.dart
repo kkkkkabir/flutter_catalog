@@ -11,7 +11,7 @@ class CartModel {
   // ignore: unused_field
   final List<int> _itemIds = [];
 
-  // ignore: unnecessary_getters_setters
+  // ignore: unnecessary_getters_setters  
   CatalogModel get catalog {
     return _catalog;
   }
