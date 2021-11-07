@@ -57,7 +57,7 @@ class _CartTotal extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
                           context.theme.primaryColorLight)),
-                  child: "Buy".text.make())
+                  child: "Buy".text.xl2.make())
               .w32(context)
         ],
       ),
@@ -76,11 +76,18 @@ class _CartList extends StatelessWidget {
             children: [
               Image.asset(
                 "assets/images/empty_cart.png",
+                width: context.isMobile ? 400 : 350,
               ),
               SizedBox(
                 height: 20,
               ),
-              "There is nothing in your cart!".text.xl2.white.make(),
+              Text(
+                "There is nothing in your cart!",
+                style: Theme.of(context)
+                    .primaryTextTheme
+                    .bodyText1!
+                    .copyWith(fontSize: 22, fontWeight: FontWeight.normal),
+              ),
             ],
           )
         : ListView.builder(

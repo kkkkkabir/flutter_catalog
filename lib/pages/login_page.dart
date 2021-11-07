@@ -42,7 +42,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text(
                 "Welcome $name",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: Theme.of(context)
+                    .primaryTextTheme
+                    .bodyText1!
+                    .copyWith(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 20.0,
@@ -58,8 +61,21 @@ class _LoginPageState extends State<LoginPage> {
                           return "Username cannot be empty";
                         }
                       },
+                      style: Theme.of(context)
+                          .primaryTextTheme
+                          .bodyText1!
+                          .copyWith(fontWeight: FontWeight.normal),
                       decoration: InputDecoration(
-                          hintText: "Enter username", labelText: "Username"),
+                          hintText: "Enter username",
+                          labelText: "Username",
+                          labelStyle: Theme.of(context)
+                              .primaryTextTheme
+                              .bodyText1!
+                              .copyWith(fontWeight: FontWeight.normal),
+                          hintStyle: Theme.of(context)
+                              .primaryTextTheme
+                              .bodyText1!
+                              .copyWith(fontWeight: FontWeight.normal)),
                       onChanged: (value) {
                         name = value;
                         setState(() {});
@@ -74,8 +90,21 @@ class _LoginPageState extends State<LoginPage> {
                         }
                       },
                       obscureText: true,
+                      style: Theme.of(context)
+                          .primaryTextTheme
+                          .bodyText1!
+                          .copyWith(fontWeight: FontWeight.normal),
                       decoration: InputDecoration(
-                          hintText: "Enter password", labelText: "Password"),
+                          hintText: "Enter password",
+                          labelText: "Password",
+                          labelStyle: Theme.of(context)
+                              .primaryTextTheme
+                              .bodyText1!
+                              .copyWith(fontWeight: FontWeight.normal),
+                          hintStyle: Theme.of(context)
+                              .primaryTextTheme
+                              .bodyText1!
+                              .copyWith(fontWeight: FontWeight.normal)),
                     ),
                     SizedBox(
                       height: 40.0,
@@ -98,10 +127,13 @@ class _LoginPageState extends State<LoginPage> {
                                 )
                               : Text(
                                   "Login",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18),
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .bodyText1!
+                                      .copyWith(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white),
                                 ),
                         ),
                       ),
