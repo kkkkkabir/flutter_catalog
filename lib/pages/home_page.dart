@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_catalog/core/store.dart';
 import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:flutter_catalog/widgets/home_widgets/catalog_header.dart';
@@ -36,6 +37,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -45,8 +47,13 @@ class _HomePageState extends State<HomePage> {
           Icons.shopping_cart_outlined,
           color: Vx.white,
         ),
-        backgroundColor: context.theme.buttonColor,
-      ),
+        backgroundColor: context.theme.primaryColorLight,
+      ).badge(
+          color: Vx.red500,
+          size: 22,
+          count: _cart.items.length,
+          textStyle:
+              TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       backgroundColor: context.canvasColor,
       body: SafeArea(
         child: Container(

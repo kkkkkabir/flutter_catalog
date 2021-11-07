@@ -50,18 +50,20 @@ class HomeDetailsPage extends StatelessWidget {
                       tag: Key(catalog.desc.toString()),
                       child: Column(
                         children: [
-                          catalog.name.text.xl4.bold.make(),
-                          catalog.desc.text.xl.gray400.make(),
+                          Text(
+                            catalog.name.toString(),
+                            style: Theme.of(context).primaryTextTheme.headline1,
+                          ),
                           10.heightBox,
                           Expanded(
-                            child:
-                                "Diam takimata ipsum tempor amet vero clita ipsum et, elitr no ipsum sed amet et elitr duo nonumy, aliquyam diam magna ea labore labore diam est gubergren et. Invidunt rebum dolor et no dolor et erat amet. Et dolor no dolores rebum sed nonumy dolores. Sed diam diam kasd diam"
-                                    .text
-                                    .align(TextAlign.center)
-                                    .xl
-                                    .gray400
-                                    .make(),
-                          ),
+                              child: Center(
+                            child: Text(
+                              "Diam takimata ipsum tempor amet vero clita ipsum et, elitr no ipsum sed amet et elitr duo nonumy, aliquyam diam magna ea labore labore diam est gubergren et. Invidunt rebum dolor et no dolor et erat amet. Et dolor no dolores rebum sed nonumy dolores. Sed diam diam kasd diam",
+                              style:
+                                  Theme.of(context).primaryTextTheme.subtitle1,
+                              textAlign: TextAlign.center,
+                            ),
+                          )),
                         ],
                       ).py64(),
                     ),

@@ -15,7 +15,7 @@ class CatalogHeader extends StatelessWidget {
             .xl5
             .bold
             .fontFamily(GoogleFonts.quicksand().fontFamily.toString())
-            .color(context.theme.accentColor)
+            .color(context.theme.colorScheme.secondary)
             .make(),
         "Trending products".text.xl2.make()
       ],

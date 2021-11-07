@@ -51,8 +51,14 @@ class CatalogItem extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                catalog.name.text.size(14).bold.make(),
-                catalog.desc.text.size(12).make(),
+                Text(
+                  catalog.name.toString(),
+                  style: Theme.of(context).primaryTextTheme.bodyText1,
+                ),
+                Text(
+                  catalog.desc.toString(),
+                  style: Theme.of(context).primaryTextTheme.bodyText2,
+                ),
                 10.heightBox,
               ],
             ),

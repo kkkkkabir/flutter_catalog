@@ -43,7 +43,7 @@ class _CartTotal extends StatelessWidget {
               return "\$${_cart.totalPrice}"
                   .text
                   .xl5
-                  .color(context.theme.accentColor)
+                  .color(context.theme.highlightColor)
                   .make();
             },
           ),
@@ -55,8 +55,8 @@ class _CartTotal extends StatelessWidget {
                     ));
                   },
                   style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(context.theme.buttonColor)),
+                      backgroundColor: MaterialStateProperty.all(
+                          context.theme.primaryColorLight)),
                   child: "Buy".text.make())
               .w32(context)
         ],
@@ -80,17 +80,26 @@ class _CartList extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              "There is nothing in your cart!".text.xl2.make(),
+              "There is nothing in your cart!".text.xl2.white.make(),
             ],
           )
         : ListView.builder(
             itemCount: _cart.items.length,
             itemBuilder: (context, index) => ListTile(
-                  leading: Icon(Icons.done),
-                  trailing: IconButton(
-                      onPressed: () => RemoveMutation(_cart.items[index]),
-                      icon: Icon(Icons.remove_circle_outline)),
-                  title: _cart.items[index].name.text.make(),
-                ));
+                leading: Icon(
+                  Icons.done,
+                  color: Theme.of(context).primaryColor,
+                ),
+                trailing: IconButton(
+                    onPressed: () => RemoveMutation(_cart.items[index]),
+                    icon: Icon(
+                      Icons.remove_circle_outline,
+                      color: Theme.of(context).primaryColor,
+                    )),
+                // ignore: unrelated_type_equality_checks
+                title: Text(
+                  _cart.items[index].name.toString(),
+                  style: Theme.of(context).primaryTextTheme.bodyText1,
+                )));
   }
 }
