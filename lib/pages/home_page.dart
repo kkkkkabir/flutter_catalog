@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       floatingActionButton: VxBuilder(
         mutations: {AddMutation, RemoveMutation},
-        builder: (context, dynamic, VxStatus) => FloatingActionButton(
+        builder: (context, dynamic, vxStatus) => FloatingActionButton(
           onPressed: () {
             Navigator.pushNamed(context, MyRoutes.cartRoute);
           },
